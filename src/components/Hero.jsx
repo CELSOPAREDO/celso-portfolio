@@ -24,7 +24,12 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
         >
           <div className="w-full max-w-sm mx-auto">
-            <img src="Messenger_creation_BA6511BD-EFFD-4E06-BEC0-7437E9CE823E.jpeg" alt="Hero Image" className="w-full rounded shadow-md" />
+            <img
+              src="/Messenger_creation_BA6511BD-EFFD-4E06-BEC0-7437E9CE823E.jpeg"
+              alt="Portrait of Celso Paredo"
+              className="w-full rounded shadow-md object-cover"
+              loading="lazy"
+            />
           </div>
         </motion.div>
       </div>
