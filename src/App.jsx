@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { DarkModeProvider, useDarkMode } from './context/DarkModeContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,9 +14,9 @@ const pageTransition = {
   animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 }
 
-export default function App() {
+function AppContent() {
   return (
-    <motion.div className="min-h-screen bg-gray-50 text-gray-900" {...pageTransition}>
+    <motion.div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300" {...pageTransition}>
       <Header />
       <main className="max-w-6xl mx-auto px-6 md:px-8 lg:px-0">
         <section id="home" className="pt-24">
@@ -36,5 +37,13 @@ export default function App() {
       </main>
       <Footer />
     </motion.div>
+  )
+}
+
+export default function App() {
+  return (
+    <DarkModeProvider>
+      <AppContent />
+    </DarkModeProvider>
   )
 }
