@@ -14,15 +14,15 @@ export default function Skills(){
 
   return (
     <div ref={ref} className="py-6 md:py-10">
-      <h2 className="text-2xl font-semibold mb-6 dark:text-white">Skills</h2>
+      <h2 className="text-2xl font-semibold mb-6">Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map((s, i) => (
           <div key={s.name} className="space-y-2">
             <div className="flex justify-between">
-              <span className="font-medium dark:text-gray-200">{s.name}</span>
-              <span className="text-sm text-gray-600 dark:text-gray-400">{s.level}%</span>
+              <span className="font-medium">{s.name}</span>
+              <span className="text-sm text-gray-600">{s.level}%</span>
             </div>
-            <div className="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded overflow-hidden">
+            <div className="w-full bg-gray-200 h-2 rounded overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={inView ? { width: `${s.level}%` } : { width: 0 }}

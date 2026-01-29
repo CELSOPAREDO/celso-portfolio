@@ -51,7 +51,7 @@ export default function Contact(){
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 dark:text-white">Contact Me</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">Contact Me</h2>
         <div className="w-16 h-1 bg-blue-600 mb-8"></div>
       </motion.div>
 
@@ -63,7 +63,7 @@ export default function Contact(){
           onChange={update} 
           required 
           placeholder="Your name" 
-          className="p-3 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition"
+          className="p-3 rounded border border-gray-300 focus:outline-none focus:border-blue-600"
         />
         <motion.input 
           whileFocus={{ scale: 1.01 }} 
@@ -73,7 +73,7 @@ export default function Contact(){
           required 
           type="email" 
           placeholder="your@email.com" 
-          className="p-3 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition"
+          className="p-3 rounded border border-gray-300 focus:outline-none focus:border-blue-600"
         />
         <motion.textarea 
           whileFocus={{ scale: 1.01 }} 
@@ -83,18 +83,18 @@ export default function Contact(){
           required 
           placeholder="Your message..." 
           rows={6} 
-          className="p-3 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition md:col-span-2"
+          className="p-3 rounded border border-gray-300 focus:outline-none focus:border-blue-600 md:col-span-2"
         />
         <div className="md:col-span-2">
           <button 
             type="submit" 
             disabled={loading}
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-600 text-white rounded font-semibold transition-colors disabled:opacity-50"
+            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded font-semibold transition-colors disabled:opacity-50"
           >
             {loading ? 'Sending...' : 'Send Message'}
           </button>
-          {status === 'success' && <span className="ml-3 text-sm text-green-600 dark:text-green-400">✓ Message sent successfully!</span>}
-          {status === 'error' && <span className="ml-3 text-sm text-red-600 dark:text-red-400">✗ Error sending message. Please try again.</span>}
+          {status === 'success' && <span className="ml-3 text-sm text-green-600">✓ Message sent successfully!</span>}
+          {status === 'error' && <span className="ml-3 text-sm text-red-600">✗ Error sending message. Please try again.</span>}
         </div>
       </form>
     </motion.div>

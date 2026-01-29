@@ -42,51 +42,51 @@ export default function Projects(){
 
   return (
     <div className="py-6 md:py-10">
-      <h2 className="text-2xl font-semibold mb-6 dark:text-white">Projects</h2>
+      <h2 className="text-2xl font-semibold mb-6">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {sampleProjects.map(p=> <ProjectCard key={p.id} project={p} onSelect={setSelectedProject} />)}
       </div>
 
       {selectedProject && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50" onClick={() => setSelectedProject(null)}>
-          <div className="bg-white dark:bg-gray-800 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="sticky top-0 bg-white dark:bg-gray-800 border-b dark:border-gray-700 p-4 flex justify-between items-center">
-              <h2 className="text-2xl font-bold dark:text-white">{selectedProject.title}</h2>
-              <button onClick={() => setSelectedProject(null)} className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-2xl">✕</button>
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="sticky top-0 bg-white border-b p-4 flex justify-between items-center">
+              <h2 className="text-2xl font-bold">{selectedProject.title}</h2>
+              <button onClick={() => setSelectedProject(null)} className="text-gray-500 hover:text-gray-700 text-2xl">✕</button>
             </div>
             
             <div className="p-6">
               <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-64 object-cover rounded-lg mb-6" />
               
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2 dark:text-white">Overview</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{selectedProject.fullDescription}</p>
+                <h3 className="text-lg font-semibold mb-2">Overview</h3>
+                <p className="text-gray-700 leading-relaxed">{selectedProject.fullDescription}</p>
               </div>
 
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 dark:text-white">Key Features</h3>
+                <h3 className="text-lg font-semibold mb-3">Key Features</h3>
                 <ul className="grid grid-cols-2 gap-3">
                   {selectedProject.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-indigo-600 dark:text-indigo-400 mt-1">✓</span>
-                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                      <span className="text-indigo-600 mt-1">✓</span>
+                      <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 dark:text-white">Technologies Used</h3>
+                <h3 className="text-lg font-semibold mb-3">Technologies Used</h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tech.map((t, i) => (
-                    <span key={i} className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium">{t}</span>
+                    <span key={i} className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">{t}</span>
                   ))}
                 </div>
               </div>
 
-              <div className="flex gap-4 pt-4 border-t dark:border-gray-700">
-                <a href={selectedProject.github} target="_blank" rel="noreferrer" className="flex-1 bg-gray-800 dark:bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 text-center font-medium transition">View Code</a>
-                <a href={selectedProject.live} target="_blank" rel="noreferrer" className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 text-center font-medium transition">Live Demo</a>
+              <div className="flex gap-4 pt-4 border-t">
+                <a href={selectedProject.github} target="_blank" rel="noreferrer" className="flex-1 bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-900 text-center font-medium">View Code</a>
+                <a href={selectedProject.live} target="_blank" rel="noreferrer" className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 text-center font-medium">Live Demo</a>
               </div>
             </div>
           </div>

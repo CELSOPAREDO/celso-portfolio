@@ -35,7 +35,7 @@ export default function About(){
         animate={inView ? { opacity: 1, y: 0 } : {}} 
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 dark:text-white">About Me</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">About Me</h2>
         <div className="w-16 h-1 bg-blue-600 mb-8"></div>
       </motion.div>
 
@@ -64,24 +64,24 @@ export default function About(){
         {/* Content */}
         <motion.div className="order-1 lg:order-2 space-y-6" variants={itemVariants}>
           <div>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              I'm a passionate <span className="font-semibold text-blue-600 dark:text-blue-400">Frontend Developer</span> with a keen eye for creating exceptional digital experiences. Specializing in building performant, accessible, and visually stunning interfaces that users love.
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              I'm a passionate <span className="font-semibold text-blue-600">Frontend Developer</span> with a keen eye for creating exceptional digital experiences. Specializing in building performant, accessible, and visually stunning interfaces that users love.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed">
               My journey in web development has been driven by a commitment to excellence, continuous learning, and a deep understanding of user-centered design principles. I thrive in collaborative environments and take pride in delivering production-ready code.
             </p>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
             {stats.map((stat, index) => (
               <motion.div 
                 key={index} 
                 className="text-center"
                 variants={itemVariants}
               >
-                <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">{stat.label}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{stat.value}</p>
+                <p className="text-2xl font-bold text-blue-600">{stat.label}</p>
+                <p className="text-sm text-gray-600">{stat.value}</p>
               </motion.div>
             ))}
           </div>
@@ -95,19 +95,19 @@ export default function About(){
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
-        <h3 className="text-2xl font-bold mb-8 dark:text-white">Skills & Expertise</h3>
+        <h3 className="text-2xl font-bold mb-8">Skills & Expertise</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skills.map((skillGroup, index) => (
             <motion.div 
               key={index}
-              className="bg-gradient-to-br from-blue-50 dark:from-blue-900/20 to-indigo-50 dark:to-indigo-900/20 p-6 rounded-lg border border-blue-100 dark:border-blue-800 hover:shadow-lg dark:hover:shadow-blue-900/20 transition-shadow"
+              className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-100 hover:shadow-lg transition-shadow"
               variants={itemVariants}
             >
-              <h4 className="font-semibold text-lg mb-4 text-blue-600 dark:text-blue-400">{skillGroup.category}</h4>
+              <h4 className="font-semibold text-lg mb-4 text-blue-600">{skillGroup.category}</h4>
               <ul className="space-y-2">
                 {skillGroup.items.map((skill, i) => (
-                  <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">
-                    <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></span>
+                  <li key={i} className="flex items-center text-gray-700">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
                     {skill}
                   </li>
                 ))}
@@ -119,7 +119,7 @@ export default function About(){
 
       {/* Experience Highlights */}
       <motion.div 
-        className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-900 dark:to-indigo-900 text-white rounded-xl p-8 md:p-12"
+        className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl p-8 md:p-12"
         variants={itemVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
